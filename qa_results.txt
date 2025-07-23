@@ -1,0 +1,132 @@
+Sure, here are the test cases for the given MOP and code using the pytest framework:
+
+Unit Test Cases:
+
+```python
+import pytest
+from unittest.mock import patch
+from cisco_xr_audit import run_cisco_xr_audit
+
+def test_establish_secure_connection():
+    with patch('cisco_xr_audit.print') as mock_print:
+        run_cisco_xr_audit()
+        mock_print.assert_any_call("Establishing secure connection to Cisco XR device...")
+
+def test_gather_device_information():
+    with patch('cisco_xr_audit.print') as mock_print:
+        run_cisco_xr_audit()
+        mock_print.assert_any_call("Gathering device information...")
+
+def test_review_running_configuration():
+    with patch('cisco_xr_audit.print') as mock_print:
+        run_cisco_xr_audit()
+        mock_print.assert_any_call("Reviewing running configuration...")
+
+def test_check_interface_configuration():
+    with patch('cisco_xr_audit.print') as mock_print:
+        run_cisco_xr_audit()
+        mock_print.assert_any_call("Checking interface configuration...")
+
+def test_assess_security_configuration():
+    with patch('cisco_xr_audit.print') as mock_print:
+        run_cisco_xr_audit()
+        mock_print.assert_any_call("Assessing security configuration...")
+
+def test_examine_routing_configuration():
+    with patch('cisco_xr_audit.print') as mock_print:
+        run_cisco_xr_audit()
+        mock_print.assert_any_call("Examining routing configuration...")
+
+def test_analyze_system_logs():
+    with patch('cisco_xr_audit.print') as mock_print:
+        run_cisco_xr_audit()
+        mock_print.assert_any_call("Analyzing system logs...")
+
+def test_generate_audit_report():
+    with patch('cisco_xr_audit.print') as mock_print:
+        run_cisco_xr_audit()
+        mock_print.assert_any_call("Generating audit report...")
+
+def test_close_connection():
+    with patch('cisco_xr_audit.print') as mock_print:
+        run_cisco_xr_audit()
+        mock_print.assert_any_call("Closing connection...")
+```
+
+Integration Test Scenarios:
+
+1. **Successful Audit Scenario**:
+   - Establish a secure connection to the Cisco XR device.
+   - Retrieve the device information (hostname, model, and software version).
+   - Review the running configuration and verify it meets the expected standards.
+   - Check the interface configuration and ensure it is properly configured.
+   - Assess the security configuration and verify it aligns with best practices.
+   - Examine the routing configuration and ensure it is correctly configured.
+   - Analyze the system logs and verify there are no critical errors or warnings.
+   - Generate a comprehensive audit report with findings and recommendations.
+   - Close the connection to the Cisco XR device.
+
+2. **Audit with Configuration Issues Scenario**:
+   - Establish a secure connection to the Cisco XR device.
+   - Retrieve the device information (hostname, model, and software version).
+   - Review the running configuration and identify any discrepancies or misconfigurations.
+   - Check the interface configuration and find any issues or deviations from the expected state.
+   - Assess the security configuration and discover any non-compliant settings or insecure protocols.
+   - Examine the routing configuration and identify any unusual or unauthorized routes.
+   - Analyze the system logs and find error messages or suspicious activities.
+   - Generate an audit report highlighting the identified issues and provide recommendations for remediation.
+   - Close the connection to the Cisco XR device.
+
+Edge Case Testing:
+
+1. **Invalid Access Credentials**:
+   - Attempt to establish a secure connection to the Cisco XR device using invalid access credentials.
+   - Verify that the audit process fails gracefully and appropriate error messages are displayed.
+
+2. **Device Unavailable**:
+   - Simulate a scenario where the Cisco XR device is not reachable or unavailable.
+   - Verify that the audit process handles the disconnection or timeout scenario correctly and provides meaningful error messages.
+
+3. **Empty Running Configuration**:
+   - Simulate a scenario where the Cisco XR device has an empty running configuration.
+   - Verify that the audit process can handle this edge case and provides appropriate feedback.
+
+4. **No Interfaces Configured**:
+   - Simulate a scenario where the Cisco XR device has no interfaces configured.
+   - Verify that the audit process can handle this edge case and provides appropriate feedback.
+
+Performance Test Considerations:
+
+1. **Audit Duration**:
+   - Measure the overall duration of the audit process to ensure it meets the expected performance requirements.
+   - Identify any slow-running commands or steps that contribute significantly to the overall audit duration.
+
+2. **Resource Utilization**:
+   - Monitor the resource utilization (CPU, memory, network bandwidth) on the system running the audit script.
+   - Ensure the audit process does not consume excessive resources, which could impact the overall system performance.
+
+3. **Scalability**:
+   - Test the audit script's ability to handle multiple Cisco XR devices concurrently.
+   - Verify that the audit process can scale without significant performance degradation.
+
+Security Test Cases:
+
+1. **Authentication Bypass**:
+   - Attempt to access the Cisco XR device without providing valid access credentials.
+   - Verify that the audit process correctly enforces authentication and denies unauthorized access.
+
+2. **Command Injection**:
+   - Inject malicious commands or special characters into the audit script's input parameters.
+   - Ensure the script properly sanitizes and validates the input to prevent command injection vulnerabilities.
+
+3. **Privilege Escalation**:
+   - Verify that the audit process runs with the minimum required privileges and does not allow for unauthorized privilege escalation.
+
+4. **Sensitive Information Exposure**:
+   - Ensure that the audit report and any intermediate output do not contain sensitive information, such as passwords or other confidential data.
+
+5. **Denial of Service (DoS)**:
+   - Simulate a scenario where the Cisco XR device is overwhelmed with excessive audit requests.
+   - Verify that the audit script can handle the increased load without causing a denial of service on the target device.
+
+These test cases should provide a comprehensive set of unit, integration, edge case, performance, and security tests for the Cisco XR Device Audit script.
